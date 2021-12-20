@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //var a;
+        //console.log("The value of a is " + a); //Значение переменной a undefined
+
+        //console.log("The value of b is " + b); //Uncaught ReferenceError: b не определена
+
+        //console.log("The value of c is " + c); //Значение переменной c undefined
+        //var c;
+
+        //console.log("The value of x is " + x); //Uncaught ReferenceError: x не определена
+
+        //let x; 
+
+
+        // function foo(){
+        //     var x=100;
+        // }
+        // console.log(x);//Uncaught ReferenceError: x не определена
+
+        /*
+        * Example 2
+        */
+
+        // function foo(){
+        //     console.log(myvar);// undefined
+        // }
+        // foo();
+        // var myvar = "my value";
+
+        // (function() {
+        // console.log(myvar); // undefined
+        // var myvar = "local value";
+        // })();
+
+        /*
+        * Example 3
+        */
+
+        // function do_something() {
+        //     console.log(foo); // undefined
+        //     var foo = 2;
+        // }
+        // function do_something() {
+        //     console.log(foo); // ReferenceError
+        //     let foo = 2;
+        // }
+        // do_something();
+
+        /*
+        * Example 4
+        */
+
+        // /* Определение функции */
+        // foo(); // "bar"
+
+        // function foo() {
+        //   console.log("bar");
+        // }
+
+        // /* Определение функции через выражение */
+        // baz(); // TypeError: baz is not a function
+
+        // var baz = function() {
+        //   console.log("bar2");
+        // };
+
+        /*
+        *Example 5
+        */
+        // var fruittype ="Apples";
+        // switch (fruittype) {
+        // case "Oranges":
+        //     console.log("Oranges are $0.59 a pound.");
+        //     break;
+        // case "Apples":
+        //     console.log("Apples are $0.32 a pound.");
+        //     //break; //программа продолжит выполнение кода если убрать оператор break
+        // case "Bananas":
+        //     console.log("Bananas are $0.48 a pound.");
+        //     break;
+        // case "Cherries":
+        //     console.log("Cherries are $3.00 a pound.");
+        //     break;
+        // case "Mangoes":
+        //     console.log("Mangoes are $0.56 a pound.");
+        //     break;
+        // case "Papayas":
+        //     console.log("Mangoes and papayas are $2.79 a pound.");
+        //     break;
+        // default:
+        // console.log("Sorry, we are out of " + fruittype + ".");
+        // }
+        // console.log("Is there anything else you'd like?");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

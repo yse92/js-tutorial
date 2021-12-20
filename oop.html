@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        * Example 1
+        * Создание объекта с помощью литерала объекта
+        */
+        // // Создание объекта со свойствами name , age
+        // var obj={name:"Иван Петров",age:38}
+        // // ОТображение значений свойств объекта
+        // document.write("<b>Имя</b>: "+obj.name+"<br>")
+        // document.write("<b>Возраст</b>: "+obj.age+"<br>")
+        // // Новые значения свойств объекта
+        // obj.name="Петр Иванов"
+        // obj.age++
+        // // ОТображение новых значений свойств объекта
+        // document.write("<b>Имя</b>: "+obj.name+"<br>")
+        // document.write("<b>Возраст</b>: "+obj.age+"<br>")
+        /*
+        * Example 2
+        * Создание объекта с методом
+        */
+        // var obj={name:"Иван Петров",
+        //     age:38,
+        //     show:function(){
+        //     document.write("<b>Имя</b>: "+this.name+"<br>")
+        //     document.write("<b>Возраст</b>: "+this.age+"<br>")
+        //     }
+        // }
+        // // Отображение значений свойств объекта
+        // obj.show()
+        // // Новые значения свойств объекта
+        // obj.name="Петр Иванов"
+        // obj.age++
+        // // Отображение новых значений свойств и объекта
+        // obj.show()
+        /* Example 3
+        *  Использование функции-конструктора
+        */
+        // функция - конструктор объектов
+        // function Fellow(name,age){
+        //     // значение свойства name
+        //     this.name=name
+        //     // значение свойства age:
+        //     this.age=age
+        //     // метод show():
+        //     this.show=function(){
+        //         document.write("<b>Имя</b>: "+this.name+"<br>")
+        //         document.write("<b>Возраст</b>: "+this.age+"<br>")
+        //     }
+        // }
+        // // создание объекта с помощью конструктора
+        // var objA=new Fellow("Иван Петров",38)
+        // var objB=new Fellow("Петр Иванов",39)
+        // // проверка значений полей объектов
+        // objA.show()
+        // objB.show()  
+        /* Example 4
+        *  Использование оператора delete
+        */ 
+        // document.write("<h4>Удаление свойств и методов</h4>")
+        // // создание объекта
+        // var colors={
+        // red:"красный",
+        // yellow:"желтый",
+        // green:"зеленый",
+        // show:function(){
+        // with(document){
+        //     write("свойства и методы объекта:<br>")
+        //     for(var s in this){
+        //         write(s+" | ")
+        //       }
+        //         write("<hr>")
+        //         }
+        //     }
+        // } 
+        // // отображение списка свойств
+        // colors.show()
+        // // удаление свойства red:
+        // delete colors.red
+        // colors.show()
+        // // удаление свойства yellow:
+        // delete colors.yellow
+        // colors.show()
+        // delete colors.show
+        // var tst='"show" in colors'
+        // document.write(tst+" -> "+eval(tst)+"<br>")
+        // // проверка наличия свойства green:
+        // tst='"green" in colors'
+        // document.write(tst+" -> "+eval(tst))
+        /* Example 5
+        *  Прототипы
+        */ 
+        // function Person(firstName, lastName, born){
+        //     this.firstName = firstName;
+        //     this.lastName = lastName;
+        //     this.born = born;
+        // }
+        // Person.prototype.age= function(){
+        //     var now = new Date();
+        //     return now.getFullYear()-this.born;
+        // }
+        // var iam = new Person("Yaroslav", "Moroz", 1992);
+        // console.log(iam.age());
+        /* Example 6
+        *  Прототипы
+        */ 
+        //объект для использования в качестве прототипа
+        // var X={
+        //     color:"красный",
+        //     number:123,
+        //     show:function(arg){
+        //         document.write("<b>"+arg+"</b>: ")
+        //         for(var s in this){
+        //             if(s!="show"){
+        //                 document.write(s+" -> "+this[s]+" | ")
+        //             }
+        //         }
+        //         document.write("<br>")
+        //     }
+        // } // Описание объекта прототипа
+        // // первый объект
+        // var A=Object.create(X)
+        // // второй объект
+        // var B=Object.create(X)        
+        // showAll()        
+        // A.color="желтый"
+        // A.number=321
+        // B.color="зеленый"        
+        // showAll()   
+        // X.name="прототип"        
+        // A.state=true        
+        // showAll()        
+        // delete X.number        
+        // delete A.color        
+        // showAll()        
+        // function showAll(){
+        //     X.show("X")
+        //     A.show("A")
+        //     B.show("B")
+        //     document.write("<hr>")
+        // }
+        /* Example 7
+        *  Прототипы
+        */ 
+        // var txt='"name" in Math'
+        // document.write(txt+" -> "+eval(txt)+"<br>")
+        // var A={color:"красный"}
+        // //Первый объект
+        // var B=new Object()
+        // //Второй объект
+        // B.number=100
+        // //Добавление свойства number в объект
+        // showAll()        
+        // Object.prototype.name="объект À"
+        // document.write(txt+" -> "+eval(txt)+"<br>")        
+        // showAll()        
+        // B.name="объект B"        
+        // document.write("Math.name -> "+Math.name+"<br>")        
+        // showAll()
+        // //удаление свойства у Object.prototype:
+        // delete Object.prototype.name
+        // //||\\
+        // document.write(txt+" -> "+eval(txt)+"<br>")        
+        // showAll()        
+        // function show(obj){
+        // for(var s in obj){
+        //     document.write(s+" -> "+ obj[s] + " | ") 
+        // }
+        // document.write("<br>")
+        // }
+        // function showAll(){
+        //     document.write("объект À: ")
+        //     show(A)
+        //     document.write("объект B: ")
+        //     show(B)
+        //     document.write("<br>")
+        // }
+        /* Example 8
+        *  Прототипы
+        */ 
+        // var animal = {
+        //     eats: true
+        // };
+        // var rabbit = {
+        //     jumps: true,
+        //     eats: false
+        // };
+        // rabbit.__proto__ = animal;
+        // //delete rabbit.eats; // true, свойство взято из animal
+        // alert( rabbit.eats ); // false, свойство взято из rabbit
+        /* Example 9
+        *  Прототипы
+        */ 
+        // // Какой объект получит свойство full при 
+        // // вызове rabbit.eat(): animal или rabbit?
+        // let animal = {
+        //     eat() {
+        //         this.full = true;
+        //     }
+        // };
+        // let rabbit = {
+        //     __proto__: animal
+        // };
+        // rabbit.eat();
+        /* Example 10
+        *  Прототипы
+        */ 
+        
+        // function MyObject(name,number){
+        //     this.name=name
+        //     this.number=number
+        //     this.show=function(){
+        //             for(var s in this){
+        //                 if(s!="show"){
+        //                     document.write(s+" -> "+this[s]+" | ")
+        //             }
+        //         }
+        //         document.write("<br>")
+        //     }
+        // }
+        // var A=new MyObject("Объект À",100)
+        // var B=new MyObject("Объект B",200)
+        // document.write("<b>Свойства созданных объектов:</b><br>")
+        // A.show()
+        // B.show()
+        // MyObject.prototype.color="Прозрачный"
+        // document.write("<b>Свойства созданных объектов:</b><br>")
+        // A.show()
+        // B.show()
+        // A.color="белый"
+        // delete MyObject.prototype.color
+        // document.write("<b>После удаления свойства:</b><br>")
+        // A.show()
+        // B.show()
+        // document.write("<b>Проверка прототипа объекта:</b><br>")
+        // var txt="Object.getPrototypeOf(A)==MyObject.prototype"
+        // document.write(txt+" -> "+eval(txt))
+        // var what=Object.getPrototypeOf(A)
+        // document.write("<br> "+ what)
+
+
+        /*---------------------*/
+        // __proto__
+        var B = {number: 123 }
+        var C = {city: "Kyiv" }
+        B.__proto__ = C;
+        
+        console.log("C.city "+ C.city)
+        console.log("B.city "+ B.city)
+
+        // prototype
+        function Foo(color="red"){
+            this.color=color
+        }
+        Foo.name = "Bob"
+        let Boo = new Foo();
+        console.log(Boo.color)
+        //Boo.prototype.word = "Hello" // Uncaught TypeError
+        Foo.color = "white"
+        
+        console.log(Foo.color)
+        console.log(Foo.name)
+        console.log(Boo.name) //undef
+        Boo.constructor.word = "Hello"
+        Boo.word="Bye"
+        console.log(Boo.word) //Bye
+        console.log(Foo.word) //Hello
+        console.log(Foo.prototype) 
+        //{constructor: ƒ}
+        //constructor: ƒ Foo(color="red")
+        //[[Prototype]]: Object
+        /*---------------------*/
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

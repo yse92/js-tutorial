@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        *Example 1
+        */
+        function Employee() {
+            this.name = '';
+            this.dept = 'general';
+        }
+        function Manager() {
+            Employee.call(this);
+            this.reports = [];
+        }
+        //создаём пустой объект с прототипом от конструктора Employee
+        //и используем этот объект как прототип для Manager
+        Manager.prototype = Object.create(Employee.prototype);
+
+        Manager.prototype.constructor = Manager;
+
+        function WorkerBee() {
+            Employee.call(this);
+            this.projects = [];
+        }
+        WorkerBee.prototype = Object.create(Employee.prototype);
+        WorkerBee.prototype.constructor = WorkerBee;
+
+        function SalesPerson() {
+            WorkerBee.call(this);
+            this.dept = 'sales';
+            this.quota = 100;
+        }
+        SalesPerson.prototype = Object.create(WorkerBee.prototype);
+        SalesPerson.prototype.constructor = SalesPerson;
+
+        function Engineer(mach) {
+            WorkerBee.call(this);
+            this.dept = 'engineering';
+            this.machine = mach || ''; // специальную идиому для установки значений по умолчанию
+        }
+        Engineer.prototype = Object.create(WorkerBee.prototype);
+        Engineer.prototype.constructor = Engineer;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

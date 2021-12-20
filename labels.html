@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        *Example 1
+        */
+
+        // let x = 0;
+        // // Label a loop as "myLoop"
+        // myLoop:
+        //     while (true) {
+        //     if (x >= 10) {
+        //         // This will cause "myLoop" to end.
+        //         break myLoop;
+        //     }
+        //     x++;
+        // }
+
+        /*
+        *Example 2
+        */
+        // var x = 0;
+        // var z = 0
+        // labelCancelLoops: while (true) {
+        //     console.log("Внешний цикл: " + x);
+        //     x += 1;
+        //     z = 1;
+        //     while (true) {
+        //         console.log("Внутренний цикл: " + z);
+        //         z += 1;
+        //         if (z === 10 && x === 10) {
+        //             break labelCancelLoops;//прерывание внешнего цикла
+        //         } else if (z === 10) {
+        //             break;//прерывание внутреннего цикла
+        //         }
+        //     }
+        // }
+
+        /*
+        *Example 3
+        */
+        // var i = 0;
+        // var n = 0;
+        // while (i < 5) {
+        //     i++;
+        //     if (i == 3) {
+        //         continue;
+        //     }
+        //     n += i;
+        // }
+
+        /*
+        *Example 4
+        */
+        // let arr = [3, 5, 7];
+        // arr.foo = "hello";
+
+        // for (let i in arr) {
+        // console.log(i); // выводит "0", "1", "2", "foo"
+        // }
+
+        // for (let i of arr) {
+        // console.log(i); // выводит "3", "5", "7"
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
