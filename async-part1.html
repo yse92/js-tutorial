@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+    <script>
+        const posts = [
+            {title: 'POst One', body: 'This is post one'},
+            {title: 'POst Two', body: 'This is post two'}
+        ]
+        function getPosts(){
+            setTimeout(()=>{
+                let output ='';
+                posts.forEach((post, index)=>{
+                    output += `<li>${posts.title}</li>`;
+                });
+                document.body.innerHTML  = output;
+            },1000);
+        }
+        function createPost(post){
+            setTimeout(()=>{
+                posts.push(post);
+            }, 2000);
+        }
+        getPosts();
+        createPost({title:'Post Three', body: 'This is post three'});
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
