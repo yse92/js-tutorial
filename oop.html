@@ -292,22 +292,24 @@
 
         /*---------------------*/
         
-        function Book(title, author, year){
-            this.title = title;
-            this.author = author; 
-            this.year = year;
-        }
-        Book.prototype.getSummary = function(){
-            return `${this.title} was written in ${this.year}`
-        }
-        let book = new Book('JS guide', 'Joe Smith', 1992)
-        //document.write(`<p>${book.getSummary()}</p>`)
-        Book.prototype.getAge = function(){
-            const today = new Date();
-            return today.getFullYear() - this.year;
-        }
-        console.log(book.getSummary())
-        console.log(book.getAge())
+        // function Book(title, author, year){
+        //     this.title = title;
+        //     this.author = author; 
+        //     this.year = year;
+        // }
+        // Book.prototype.getSummary = function(){
+        //     return `${this.title} was written in ${this.year}`
+        // }
+        // let book = new Book('JS guide', 'Joe Smith', 1992)
+        // //document.write(`<p>${book.getSummary()}</p>`)
+        // Book.prototype.getAge = function(){
+        //     const today = new Date();
+        //     return today.getFullYear() - this.year;
+        // }
+        // console.log(book.getSummary())
+        // console.log(book.getAge())
+
+
    </script>
 </head>
 <body>
