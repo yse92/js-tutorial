@@ -39,6 +39,73 @@
         //     B(2);
         //     }
         // A(1); // в консоле выведится 6 (1 + 2 + 3)
+        /*
+        *Example 4
+        */
+        /*----------------Array.prototype.reduce--------------*/
+        //Решение задачи без использования функций высшего порядка
+        // const arr = [5, 7, 1, 8, 4];
+        // let sum = 0;
+        // for(let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        // }
+        // // выводит 25
+        // console.log(sum);
+        // Решение задачи с помощью функции высшего порядка
+        // const arr = [5, 7, 1, 8, 4];
+        // const sum = arr.reduce(function(accumulator, currentValue) {
+        //     return accumulator + currentValue; //accumulator запоминаем и передаем дальше
+        // });
+        // // выводит 25
+        // console.log(sum);
+        /*
+        *Example 5
+        */
+        /*----------------Array.prototype.filter--------------*/
+        //найти совершеннолетних пользователей
+        //Решение задачи без использования функций высшего порядка
+        // const persons = [
+        //     { name: 'Peter', age: 16 },
+        //     { name: 'Mark', age: 18 },
+        //     { name: 'John', age: 27 },
+        //     { name: 'Jane', age: 14 },
+        //     { name: 'Tony', age: 24},
+        // ];
+        // const fullAge = [];
+        // for(let i = 0; i < persons.length; i++) {
+        //     if(persons[i].age >= 18) {
+        //         fullAge.push(persons[i]);
+        //     }
+        // }
+        // console.log(fullAge);
+        // Решение задачи с помощью функции высшего порядка
+        // const persons = [
+        //     { name: 'Peter', age: 16 },
+        //     { name: 'Mark', age: 18 },
+        //     { name: 'John', age: 27 },
+        //     { name: 'Jane', age: 14 },
+        //     { name: 'Tony', age: 24},
+        // ];
+        // const fullAge = persons.filter(person => person.age >= 18);
+        // console.log(fullAge);
+        /*
+        *Example 6
+        */
+        /*----------------Array.prototype.map--------------*/
+        //Решение задачи без использования функций высшего порядка
+        // const arr1 = [1, 2, 3];
+        // const arr2 = [];
+        // for(let i = 0; i < arr1.length; i++) {
+        // arr2.push(arr1[i] * 2);
+        // }
+        // // выводит [ 2, 4, 6 ]
+        // console.log(arr2);
+        // Решение задачи с помощью функции высшего порядка map
+        // const arr1 = [1, 2, 3];
+        // const arr2 = arr1.map(function(item) {
+        // return item * 2;
+        // });
+        // console.log(arr2);
     </script>
 </head>
 <body>
