@@ -247,36 +247,50 @@
 
         /*---------------------*/
         // __proto__
-        var B = {number: 123 }
-        var C = {city: "Kyiv" }
-        B.__proto__ = C;
+        // var B = {number: 123 }
+        // var C = {city: "Kyiv" }
+        // B.__proto__ = C;
         
-        console.log("C.city "+ C.city)
-        console.log("B.city "+ B.city)
+        // console.log("C.city "+ C.city)
+        // console.log("B.city "+ B.city)
 
-        // prototype
-        function Foo(color="red"){
-            this.color=color
-        }
-        Foo.name = "Bob"
-        let Boo = new Foo();
-        console.log(Boo.color)
-        //Boo.prototype.word = "Hello" // Uncaught TypeError
-        Foo.color = "white"
+        // // prototype
+        // function Foo(color="red"){
+        //     this.color=color
+        // }
+        // Foo.name = "Bob"
+        // let Boo = new Foo();
+        // console.log(Boo.color)
+        // //Boo.prototype.word = "Hello" // Uncaught TypeError
+        // Foo.color = "white"
         
-        console.log(Foo.color)
-        console.log(Foo.name)
-        console.log(Boo.name) //undef
-        Boo.constructor.word = "Hello"
-        Boo.word="Bye"
-        console.log(Boo.word) //Bye
-        console.log(Foo.word) //Hello
-        console.log(Foo.prototype) 
+        // console.log(Foo.color)
+        // console.log(Foo.name)
+        // console.log(Boo.name) //undef
+        // Boo.constructor.word = "Hello"
+        // Boo.word="Bye"
+        // console.log(Boo.word) //Bye
+        // console.log(Foo.word) //Hello
+        // console.log(Foo.prototype) 
         //{constructor: ƒ}
         //constructor: ƒ Foo(color="red")
         //[[Prototype]]: Object
+
         /*---------------------*/
 
+        // let Human = function(date){
+        //     this.date = date;            
+        // }
+        // let Friend = function(name){
+        //     this.name = name;
+        // }
+        // Friend.prototype = Human;
+        
+        // var me = new Friend('Yaroslav')
+        // me.date = "15.10.1992"
+        // console.log(me.date) //15.10.1992
+
+        /*---------------------*/
     </script>
 </head>
 <body>
