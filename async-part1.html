@@ -14,19 +14,23 @@
             setTimeout(()=>{
                 let output ='';
                 posts.forEach((post, index)=>{
-                    output += `<li>${posts.title}</li>`;
+                    output += `<li>${post.title}</li>`;
                 });
                 document.body.innerHTML  = output;
             },1000);
         }
-        function createPost(post){
+        function createPost(post, callback){
             setTimeout(()=>{
                 posts.push(post);
+                callback();
             }, 2000);
         }
+        //waiting 1 sec...
         getPosts();
-        createPost({title:'Post Three', body: 'This is post three'});
+        //waiting 1 sec...
+        createPost({title:'Post Three', body: 'This is post three'}, getPosts);
     </script>
+    
 </head>
 <body>
     
