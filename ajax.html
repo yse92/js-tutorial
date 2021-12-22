@@ -8,6 +8,8 @@
 </head>
 <body>
     <button id="button">Get text file</button>
+    <br><br>
+    <div id="text"></div>
     <script>
         document.getElementById('button').addEventListener
         ('click', loadText);
@@ -18,6 +20,12 @@
             //Open - type, url/file, async
             xhr.open('GET', 'sample.txt', true);//Позволяет инициализировать только что созданный запрос, или 
             //повторно инициализировать существующий запрос
+            console.log('ReadyState: ', xhr.readyState); //проходит состояние 1
+
+            //OPTIONAL - used for loaders
+            xhr.onprogress = function(){
+                console.log('ReadyState: ', xhr.readyState);
+            }
 
             // XMLHttpRequest.open(method, url);
             // XMLHttpRequest.open(method, url, async);
@@ -32,22 +40,32 @@
             // async, user, password - необязательные параметры
             
             /*-------вариант 1-------*/
-            // xhr.onload = function(){
-            //     if(xhr.status == 200){
-            //         console.log(this.responseText);
-            //     }
-            // }
-            /*-------вариант 2-------*/            
-            xhr.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    console.log(this.responseText);
+            xhr.onload = function(){
+                console.log('ReadyState: ', xhr.readyState);
+                if(xhr.status == 200){
+                    // console.log(this.responseText);//проходит состояние 4
+                    document.getElementById('text').innerHTML = 
+                    this.responseText;
+                }else if(this.status = 404){
+                    document.getElementById('text').innerHTML = 
+                    'Not Found';
                 }
             }
+            xhr.onerror = function(){
+                console.log('Request Error ...');
+            }
+            /*-------вариант 2-------*/            
+            // xhr.onreadystatechange = function(){
+            //     console.log('ReadyState: ', xhr.readyState);
+            //     if(this.readyState == 4 && this.status == 200){
+            //         console.log(this.responseText); //проходит через 1, 2, 3 и 4 состояния
+            //     }
+            // }
             //Разница между 1 и 2            
             //Событие readystatechange срабатывает каждый раз, когда readyState меняется.
             //Событие load срабатывает только после успешного завершения запроса.
             //Send request
-            xhr.send();
+            xhr.send(); // отправляем запрос на сервер
         }
         //readyState: возвращает состояние объекта XMLHttpRequest
         //onreadystatechange: содержит обработчик событий, вызываемый
