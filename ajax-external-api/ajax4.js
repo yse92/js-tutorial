@@ -25,7 +25,7 @@ function postName(e){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'process.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
+    //устанавливает значения HTTP заголовков
     xhr.onload = function(){
         console.log(this.responseText);
     }
